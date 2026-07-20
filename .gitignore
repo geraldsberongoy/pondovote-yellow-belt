@@ -7,7 +7,7 @@ next-env.d.ts
 
 # rust / soroban
 target/
-Cargo.lock
+# Cargo.lock IS committed for the contract — pins a working dep set (see contracts/poll)
 
 # env & secrets
 .env
