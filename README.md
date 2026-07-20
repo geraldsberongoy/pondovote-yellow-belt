@@ -24,10 +24,11 @@ Built for the Risein *Stellar: Journey to Mastery* **Level 2 / Yellow Belt** cha
 
 ## 🔗 Deployment info
 
-- **Deployed contract address:** `REPLACE_WITH_DEPLOYED_CONTRACT_ID`
-  - Explorer: `https://stellar.expert/explorer/testnet/contract/REPLACE_WITH_DEPLOYED_CONTRACT_ID`
-- **Sample vote transaction hash:** `REPLACE_WITH_TX_HASH`
-  - Explorer: `https://stellar.expert/explorer/testnet/tx/REPLACE_WITH_TX_HASH`
+- **Deployed contract address:** `CCWGZ23DOQLBHQ4S52CKDXREOJ77L4COIL25L6AUMEK5N7DTLZC7PRLI`
+  - Explorer: https://stellar.expert/explorer/testnet/contract/CCWGZ23DOQLBHQ4S52CKDXREOJ77L4COIL25L6AUMEK5N7DTLZC7PRLI
+- **Sample `vote` transaction hash:** `6613289a2b7f200438a6e3100509b75c1d90efdff5b0e6443135cea01709dcb9`
+  - Explorer: https://stellar.expert/explorer/testnet/tx/6613289a2b7f200438a6e3100509b75c1d90efdff5b0e6443135cea01709dcb9
+  - Deploy tx: https://stellar.expert/explorer/testnet/tx/9b05c9db5bd0264771f8d2d3640216f326c8c1948d40f5fe6b9748682e5d74e3
 - **Live demo:** _(optional — add Vercel/Netlify URL)_
 
 ## Stack

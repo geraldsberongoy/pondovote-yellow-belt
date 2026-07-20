@@ -15,7 +15,8 @@ import { signTx } from "./wallet";
 
 // Filled in after `stellar contract deploy` (see README). Also settable via env.
 export const CONTRACT_ID =
-  process.env.NEXT_PUBLIC_CONTRACT_ID ?? "REPLACE_WITH_DEPLOYED_CONTRACT_ID";
+  process.env.NEXT_PUBLIC_CONTRACT_ID ??
+  "CCWGZ23DOQLBHQ4S52CKDXREOJ77L4COIL25L6AUMEK5N7DTLZC7PRLI";
 
 const RPC_URL = "https://soroban-testnet.stellar.org";
 const server = new rpc.Server(RPC_URL);
