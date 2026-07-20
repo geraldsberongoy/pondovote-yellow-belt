@@ -1,0 +1,18 @@
+# node / next
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+next-env.d.ts
+
+# rust / soroban
+target/
+Cargo.lock
+
+# env & secrets
+.env
+.env.local
+.stellar/
+
+# os
+.DS_Store
