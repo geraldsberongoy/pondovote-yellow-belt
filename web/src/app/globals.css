@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
+/* PondoVote civic-minimal palette (mirrors web3/web/src/app/globals.css). */
 :root {
-  --bg: #0f1419;
-  --panel: #1a2230;
-  --border: #2a3547;
-  --text: #e6edf3;
-  --muted: #8b98a9;
-  --accent: #f5c518;
-  --accent-fg: #0f1419;
-  --ok: #3fb950;
-  --err: #f85149;
+  --bg: #fafafa;
+  --panel: #ffffff;
+  --border: #e8e8e8;
+  --text: #0f0f0f;
+  --muted: #6b6b6b;
+  --accent: #1a1a1a;
+  --accent-fg: #ffffff;
+  --ok: #16a34a;
+  --err: #dc2626;
 }
 
 html,
@@ -17,4 +18,8 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, sans-serif;
+}
+
+.serif {
+  font-family: var(--font-playfair), Georgia, serif;
 }

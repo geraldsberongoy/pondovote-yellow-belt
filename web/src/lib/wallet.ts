@@ -25,6 +25,23 @@ function getKit(): StellarWalletsKit {
   return kit;
 }
 
+export type Connection = { address: string; network: string; onTestnet: boolean };
+
+/**
+ * Connects Freighter directly — no picker. The kit calls Freighter's
+ * `requestAccess()`, which shows the approval popup the first time this site
+ * asks; afterwards Freighter answers silently (revoke under Freighter >
+ * Settings > Connected apps to see the prompt again). Reads the network back
+ * from the extension so the UI can prove what it is actually talking to.
+ */
+export async function connectFreighter(): Promise<Connection> {
+  const k = getKit();
+  k.setWallet(FREIGHTER_ID);
+  const { address } = await k.getAddress();
+  const { network, networkPassphrase } = await k.getNetwork();
+  return { address, network, onTestnet: networkPassphrase === NETWORK_PASSPHRASE };
+}
+
 /** Opens the wallet-picker modal. Resolves with the connected address. */
 export function openWalletModal(): Promise<string> {
   const k = getKit();
