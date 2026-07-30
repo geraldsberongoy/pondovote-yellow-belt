@@ -2,6 +2,7 @@
 node_modules/
 .next/
 out/
+web/out/
 *.tsbuildinfo
 next-env.d.ts
 

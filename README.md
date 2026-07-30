@@ -14,7 +14,7 @@ Built for the Risein *Stellar: Journey to Mastery* **Level 2 / Yellow Belt** cha
 | Transaction hash of a contract call | [`528abe00…`](https://stellar.expert/explorer/testnet/tx/528abe004c1a61e378f1de66e800b355cf25badea326d2870dfb0141da6bac68) (Freighter-signed `vote`) |
 | Wallet options screenshot | [below](#-wallet-options-screenshot) |
 | Setup instructions | [Setup](#setup) |
-| Live demo (optional) | _not deployed_ |
+| Live demo (optional) | **https://geraldsberongoy.github.io/pondovote-yellow-belt/** |
 
 ## What this is
 
@@ -49,14 +49,35 @@ budget question, three real proposals, one lightweight `vote` contract call per 
 | Event listening / state sync | `getVoteEvents()` streams contract `vote` events via Soroban RPC `getEvents` into a live activity feed (`web/src/lib/poll.ts`, `page.tsx`) |
 | Second contract read | `get_balance()` on the PondoVote treasury contract |
 
-## 📸 Wallet options screenshot
+## 📸 Screenshots
 
-> **TODO before submission:** run `npm run dev`, click **use another wallet**, and screenshot the
-> StellarWalletsKit picker showing the available wallets. Save it as `screenshots/wallets.png`
-> (the folder does not exist yet, so the image below is intentionally broken until you add it —
-> the Level 2 checklist requires this screenshot).
+> **TODO before submission:** capture these four and drop them in `screenshots/`. The wallet-options
+> shot is the one the Level 2 checklist requires; the rest show the app working. Until they exist the
+> images below render broken.
+
+### Wallet options available
+
+Click **use another wallet** to open the StellarWalletsKit picker.
 
 ![Wallet options](screenshots/wallets.png)
+
+### Live budget vote
+
+The three proposals, the running tally, and the connected-wallet badge.
+
+![Budget vote UI](screenshots/vote.png)
+
+### Transaction status
+
+`pending → success` with the explorer link.
+
+![Transaction confirmed](screenshots/tx-success.png)
+
+### On-chain activity feed
+
+`vote` events streamed back from Soroban RPC.
+
+![Live activity feed](screenshots/events.png)
 
 ## 🔗 Deployment info
 
@@ -78,7 +99,9 @@ which is what the live activity feed reads back via `getEvents`.
 CLI-signed reference calls: [`7dc6d4b7…`](https://stellar.expert/explorer/testnet/tx/7dc6d4b740eb953c6a79739754ce667eec7e45f460861696313e5204d7c7932e)
 · [`6613289a…`](https://stellar.expert/explorer/testnet/tx/6613289a2b7f200438a6e3100509b75c1d90efdff5b0e6443135cea01709dcb9)
 
-- **Live demo:** _(optional — add Vercel/Netlify URL)_
+- **Live demo:** https://geraldsberongoy.github.io/pondovote-yellow-belt/ — static export deployed by
+  `.github/workflows/pages.yml` on every push to `main`. It is the same client-side app: the browser
+  talks straight to Soroban RPC and your wallet, so no server is involved.
 
 ## Stack
 
