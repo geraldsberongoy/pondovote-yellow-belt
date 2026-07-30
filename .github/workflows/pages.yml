@@ -27,7 +27,10 @@ jobs:
           node-version: 20
           cache: npm
           cache-dependency-path: web/package-lock.json
-      - run: npm ci
+      # `npm install`, not `npm ci`: the lockfile is generated on Windows and
+      # cannot materialize @trezor/connect's platform-specific subtree for
+      # Linux, which makes `npm ci` fail the sync check.
+      - run: npm install --no-audit --no-fund
       - run: npm run build
         env:
           # Pages serves from https://<user>.github.io/<repo>/
