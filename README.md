@@ -11,8 +11,8 @@ Built for the Risein *Stellar: Journey to Mastery* **Level 2 / Yellow Belt** cha
 | Checklist item | Where |
 | --- | --- |
 | Deployed contract address | `CCWGZ23DOQLBHQ4S52CKDXREOJ77L4COIL25L6AUMEK5N7DTLZC7PRLI` — [Deployment info](#-deployment-info) |
-| Transaction hash of a contract call | [`528abe00…`](https://stellar.expert/explorer/testnet/tx/528abe004c1a61e378f1de66e800b355cf25badea326d2870dfb0141da6bac68) (Freighter-signed `vote`) |
-| Wallet options screenshot | [below](#-wallet-options-screenshot) |
+| Transaction hash of a contract call | [`40dc9f9e…`](https://stellar.expert/explorer/testnet/tx/40dc9f9e461c8bdad93e34c19b75f8ce47d3e0148c7748731bf5610c132541e3) (Freighter-signed `vote`) |
+| Screenshots | [full vote walkthrough](#-screenshots) |
 | Setup instructions | [Setup](#setup) |
 | Live demo (optional) | **https://geraldsberongoy.github.io/pondovote-yellow-belt/** |
 
@@ -51,33 +51,49 @@ budget question, three real proposals, one lightweight `vote` contract call per 
 
 ## 📸 Screenshots
 
-> **TODO before submission:** capture these four and drop them in `screenshots/`. The wallet-options
-> shot is the one the Level 2 checklist requires; the rest show the app working. Until they exist the
-> images below render broken.
+A full vote, end to end, against the deployed contract on testnet.
+
+### 1. Wallet gate
+
+Clicking **Connect Freighter** wakes the extension; the button reads `Check Freighter…` while the
+request is in flight, so a click is never silent.
+
+![Freighter unlock prompt next to the app](screenshots/freighter-unlock.png)
+
+### 2. Wallet connection request
+
+Freighter asks the user to authorise the origin, showing the account and the network it will connect
+with. The app then reads that network back and flags anything that is not TESTNET.
+
+![Freighter connection request for geraldsberongoy.github.io, wallet GDSC...ZVTQ on Test Net](screenshots/connect-request.png)
+
+### 3. Signing the vote
+
+The `vote` contract call goes to Freighter for signature — wallet, network and fee are shown before
+approval — while the app sits in its `pending` state.
+
+![Freighter confirm-transaction dialog, app showing "Submitting vote to the network..."](screenshots/confirm-transaction.png)
+
+### 4. Confirmed, tallied and streamed back
+
+The tally updates, the `vote` event arrives in the live on-chain activity feed, and the transaction
+status turns green with an explorer link. Header badge shows `● Connected · Freighter · TESTNET`.
+
+![Vote confirmed, tally at 6 votes, activity feed showing the vote event](screenshots/vote-confirmed.png)
+
+### 5. Verifiable on Stellar Explorer
+
+The same transaction on stellar.expert: `GDSC…ZVTQ invoked contract CCWG…PRLI vote(GDSC…ZVTQ, 1_u32)`.
+
+![stellar.expert showing the successful vote transaction](screenshots/explorer-tx.png)
 
 ### Wallet options available
 
-Click **use another wallet** to open the StellarWalletsKit picker.
+> **Still to capture:** click **use another wallet** and screenshot the StellarWalletsKit picker
+> listing Freighter, xBull, Albedo, Lobstr, Hana, … Save it as `screenshots/wallets.png`. The Level 2
+> checklist asks for this one specifically, and the shots above only show Freighter.
 
 ![Wallet options](screenshots/wallets.png)
-
-### Live budget vote
-
-The three proposals, the running tally, and the connected-wallet badge.
-
-![Budget vote UI](screenshots/vote.png)
-
-### Transaction status
-
-`pending → success` with the explorer link.
-
-![Transaction confirmed](screenshots/tx-success.png)
-
-### On-chain activity feed
-
-`vote` events streamed back from Soroban RPC.
-
-![Live activity feed](screenshots/events.png)
 
 ## 🔗 Deployment info
 
@@ -89,6 +105,7 @@ The three proposals, the running tally, and the connected-wallet badge.
 
 | Option voted | Tx hash | Explorer |
 | --- | --- | --- |
+| 1 — Org Room Computers | `40dc9f9e461c8bdad93e34c19b75f8ce47d3e0148c7748731bf5610c132541e3` | [view](https://stellar.expert/explorer/testnet/tx/40dc9f9e461c8bdad93e34c19b75f8ce47d3e0148c7748731bf5610c132541e3) — pictured above |
 | 0 — IT Week Hackathon | `528abe004c1a61e378f1de66e800b355cf25badea326d2870dfb0141da6bac68` | [view](https://stellar.expert/explorer/testnet/tx/528abe004c1a61e378f1de66e800b355cf25badea326d2870dfb0141da6bac68) |
 | 2 — Student Welfare Fund | `ef2a8bfc8e63cd4308b9a5e603800fd68b94d90b2f352143d5a2bc4d3022c6af` | [view](https://stellar.expert/explorer/testnet/tx/ef2a8bfc8e63cd4308b9a5e603800fd68b94d90b2f352143d5a2bc4d3022c6af) |
 
